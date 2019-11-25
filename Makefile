@@ -1,10 +1,10 @@
-all: Game.o Game
+all: Cgol.o Cgol
 
-Game: Game.o PrintGameBoard.o replaceChar.o removeSpace.o
-	gcc -ansi -Wall -o Game Game.o PrintGameBoard.o replaceChar.o removeSpace.o
+Cgol: Cgol.o PrintGameBoard.o replaceChar.o removeSpace.o
+	gcc -ansi -Wall -o Cgol Cgol.o PrintGameBoard.o replaceChar.o removeSpace.o
 
-Game.o: Game.c
-	gcc -ansi -Wall -c Game.c
+Cgol.o: Cgol.c
+	gcc -ansi -Wall -c Cgol.c
 
 PrintGameBoard.o: PrintGameBoard.c
 	gcc -ansi -Wall -c PrintGameBoard.c
@@ -16,4 +16,4 @@ removeSpace.o: removeSpace.c
 	gcc -ansi -Wall -c removeSpace.c
 
 clean:
-	rm Game.o PrintGameBoard.o replaceChar.o removeSpace.o
+	rm Cgol.o PrintGameBoard.o replaceChar.o removeSpace.o

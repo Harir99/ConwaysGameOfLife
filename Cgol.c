@@ -87,7 +87,11 @@ int main(int argc, char const *argv[]) {
                         }
                     }
 
+<<<<<<< HEAD:Game.c
                 /*for (k = loooped_k+1; k <= tickincrement; k++) */
+=======
+                
+>>>>>>> 31ab6546de729747794aee6fa607455b19bf32c7:Cgol.c
                 while (loooped_k < tickincrement)
                 {
                     Numtick++;
@@ -175,8 +179,12 @@ int main(int argc, char const *argv[]) {
                          }
                     loooped_k++;
                 }
+<<<<<<< HEAD:Game.c
                 /*loooped_k = tickincrement;
                 tickincrement+=atoi(argv[2]);*/
+=======
+               
+>>>>>>> 31ab6546de729747794aee6fa607455b19bf32c7:Cgol.c
                 loooped_k = 0;
 
                 if (change) {
