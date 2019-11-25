@@ -13,7 +13,6 @@ int main(int argc, char const *argv[]) {
     int col = 40;
     int i = 0;
     int j = 0;
-    int k = 0;
     int match = 0;
     int change = 1;
     int alive = 0;
@@ -21,7 +20,7 @@ int main(int argc, char const *argv[]) {
     char NewgameBoard[ROWS][COLUMN];
     char *c;
     int Numtick = 0;
-    int tickincrement = 1;
+    int tickincrement = 0;
     int valid = 0;
     char choice[5];
     int loooped_k = 0;
@@ -65,6 +64,11 @@ int main(int argc, char const *argv[]) {
     } if (argc == 3){
         tickincrement = atoi(argv[2]);
     }
+    if (argc == 2){
+        tickincrement = 5;
+    }
+
+
         replaceChar(gameBoard);
         printGameBoard(gameBoard, Numtick, tickincrement);
 
@@ -72,7 +76,9 @@ int main(int argc, char const *argv[]) {
         scanf("%s",choice);
         if (strcmp(choice,"y") == 0){
             valid = 1;
-            while (valid){
+            printf("\t\t%d\n", tickincrement);
+
+            while (valid == 1){
 
                 for (i = 0; i < row; i++) {
                     for (j = 0; j < col; j++) {
@@ -81,12 +87,15 @@ int main(int argc, char const *argv[]) {
                         }
                     }
 
-                for (k = loooped_k; k <= tickincrement; k++) {
-                    Numtick = k;
+                
+                while (loooped_k < tickincrement)
+                {
+                    Numtick++;
                     match = 0;
                     printGameBoard(NewgameBoard, Numtick, tickincrement);
                     system("sleep 0.25");
                     system("clear");
+
                     for (i = 0; i < row; i++) {
                         for (j = 0; j < col; j++) {
                             alive = 0;
@@ -156,7 +165,7 @@ int main(int argc, char const *argv[]) {
                         change = 0;
                         i = row;
                         j = col;
-                        k = tickincrement;
+                        loooped_k = tickincrement;
                         break;
                     }
                      for (i = 0; i < row; i++) {
@@ -164,10 +173,11 @@ int main(int argc, char const *argv[]) {
                                  gameBoard[i][j] = NewgameBoard[i][j];
                              }
                          }
-
+                    loooped_k++;
                 }
-                loooped_k = tickincrement;
-                tickincrement+=atoi(argv[2]);
+               
+                loooped_k = 0;
+
                 if (change) {
 
                     printGameBoard(NewgameBoard, Numtick, tickincrement);
