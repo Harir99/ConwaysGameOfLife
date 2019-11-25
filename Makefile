@@ -1,13 +1,13 @@
-all: Cgo.o Cgo
+all: Cgol.o Cgol
 
-Cgo: Cgo.o PrintCgoBoard.o replaceChar.o removeSpace.o
-	gcc -ansi -Wall -o Cgo Cgo.o PrintCgoBoard.o replaceChar.o removeSpace.o
+Cgol: Cgol.o PrintCgolBoard.o replaceChar.o removeSpace.o
+	gcc -ansi -Wall -o Cgol Cgol.o PrintCgolBoard.o replaceChar.o removeSpace.o
 
-Cgo.o: Cgo.c
-	gcc -ansi -Wall -c Cgo.c
+Cgol.o: Cgol.c
+	gcc -ansi -Wall -c Cgol.c
 
-PrintCgoBoard.o: PrintCgoBoard.c
-	gcc -ansi -Wall -c PrintCgoBoard.c
+PrintCgolBoard.o: PrintCgolBoard.c
+	gcc -ansi -Wall -c PrintCgolBoard.c
 
 replaceChar.o: replaceChar.c
 	gcc -ansi -Wall -c replaceChar.c
@@ -16,4 +16,4 @@ removeSpace.o: removeSpace.c
 	gcc -ansi -Wall -c removeSpace.c
 
 clean:
-	rm Cgo.o PrintCgoBoard.o replaceChar.o removeSpace.o
+	rm Cgol.o PrintCgolBoard.o replaceChar.o removeSpace.o
