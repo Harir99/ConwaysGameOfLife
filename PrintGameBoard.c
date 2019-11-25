@@ -42,7 +42,6 @@ void printGameBoard(char gameBoard[ROWS][COLUMN], int Numtick, int Increment ) {
         }
 
     }
-
     for(b2=0; b2<42; b2++)
     {
         if ( b2 == 0){
@@ -50,7 +49,6 @@ void printGameBoard(char gameBoard[ROWS][COLUMN], int Numtick, int Increment ) {
         }
 
         else if(b2 == 41){
-            
             printf("%d", Numtick);
         }
         else {
